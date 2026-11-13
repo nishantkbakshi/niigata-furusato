@@ -1538,7 +1538,7 @@ function curTheme(){const a=document.documentElement.getAttribute('data-theme');
 $('#themebtn').onclick=()=>{const n=curTheme()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('fs-theme',n)}catch(e){}};
 
 /* nav */
-const nav=$('#nav'); const onScroll=()=>nav.classList.toggle('solid',scrollY>innerHeight*0.6); addEventListener('scroll',onScroll,{passive:true}); onScroll();
+const nav=$('#nav'); const onScroll=()=>nav.classList.toggle('solid',scrollY>8); addEventListener('scroll',onScroll,{passive:true}); onScroll();
 $('#burger').onclick=()=>{const o=$('#links').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
 $$('#links a').forEach(a=>a.onclick=()=>{$('#links').classList.remove('open');$('#burger').setAttribute('aria-expanded',false)});
 

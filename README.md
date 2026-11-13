@@ -1,2 +1,2 @@
-# snow-country-pass
+# niigata-furusato
 MarketingCompetition-MBA27

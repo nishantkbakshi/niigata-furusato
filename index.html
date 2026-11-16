@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Niigata Furusato · Japan's hometown</title>
-<meta name="description" content="Niigata Furusato: Japan's hometown, and you can be part of it. Become the steward of a rice terrace in Niigata for a year.">
+<title>Niigata Furusato · Niigata welcomes you home</title>
+<meta name="description" content="Niigata Furusato: Niigata welcomes you home. Sponsor a rice terrace in Niigata for a year, plant or harvest it with the farmer, and receive sake from the year's rice.">
 <script>try{var t=localStorage.getItem('nf-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <style>
 @font-face{font-family:'Shippori Mincho B1';font-weight:500;font-display:swap;src:url(fonts/sm-500.woff2) format('woff2')}@font-face{font-family:'Shippori Mincho B1';font-weight:700;font-display:swap;src:url(fonts/sm-700.woff2) format('woff2')}@font-face{font-family:'Shippori Mincho B1';font-weight:800;font-display:swap;src:url(fonts/sm-800.woff2) format('woff2')}@font-face{font-family:'Zen Kaku Gothic New';font-weight:400;font-display:swap;src:url(fonts/zk-400.woff2) format('woff2')}@font-face{font-family:'Zen Kaku Gothic New';font-weight:500;font-display:swap;src:url(fonts/zk-500.woff2) format('woff2')}@font-face{font-family:'Zen Kaku Gothic New';font-weight:700;font-display:swap;src:url(fonts/zk-700.woff2) format('woff2')}
@@ -110,6 +110,32 @@ dd{margin:2px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(18p
 .plan strong{color:var(--ink);font-weight:700}
 @media (max-width:900px){.days .wrap{grid-template-columns:1fr}.days img{aspect-ratio:4/3}}
 
+/* planner */
+.planner .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(28px,5vw,72px);align-items:start}
+.picks{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:28px}
+.picks fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.picks legend{float:left;font-weight:700;font-size:16px;margin-right:10px;padding:0}
+.picks label{cursor:pointer}
+.picks input{position:absolute;opacity:0;width:1px;height:1px}
+.picks label span{display:inline-block;padding:.5em 1.05em;border-radius:999px;border:1px solid var(--line);font-size:16px;line-height:1.2}
+.picks input:checked+span{background:var(--leaf);border-color:var(--leaf);color:var(--paper);font-weight:700}
+.picks input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+#p-head{font-size:clamp(30px,4.4vw,60px);font-weight:800;margin-top:36px;line-height:1.05}
+#p-sub{font-size:18px;color:var(--soft);margin-top:10px;max-width:52ch}
+.legs{list-style:none;padding:0;margin-top:24px;border-top:1px solid var(--line)}
+.legs li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.legs em{font-style:normal;flex:none;font-size:14px;font-weight:700;padding:.35em .9em;border-radius:999px;background:var(--leaf);color:var(--paper)}
+.legs em.inc{background:none;color:var(--leaf);border:1px solid var(--leaf)}
+.pnote{font-size:15px;color:var(--soft);margin-top:14px}
+.sponsor{background:var(--paper2);border-radius:6px;padding:clamp(22px,2.6vw,32px)}
+.sponsor img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:4px;margin:14px 0 18px}
+.sponsor h3{font-size:clamp(24px,2vw + 10px,32px)}
+.sponsor ul{list-style:none;padding:0;font-size:17px;line-height:1.7}
+.sponsor li:first-child{font-weight:700}
+.sponsor .btn{display:block;text-align:center;background:var(--leaf);color:var(--paper);margin-top:18px}
+.sponsor small{display:block;text-align:center;margin-top:12px;font-size:14px;color:var(--soft)}
+@media (max-width:900px){.planner .wrap{grid-template-columns:1fr}}
+
 /* price */
 .price{background:var(--forest);color:#F1EDE0}
 .price .lead{color:#B9C4B8}
@@ -144,7 +170,7 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
 <body>
 <div class="nav" id="nav"><div class="wrap">
   <a class="brand" href="#top">Niigata Furusato <span lang="ja">故郷</span></a>
-  <nav aria-label="Sections"><a href="#year">The year</a><a href="#route">Getting there</a><a href="#days">Two days</a><a href="#price">Price</a><a href="#ballot">Ballot</a></nav>
+  <nav aria-label="Sections"><a href="#year">The year</a><a href="#route">Getting there</a><a href="#plan">Plan your visit</a><a href="#days">Two days</a><a href="#price">Price</a><a href="#ballot">Ballot</a></nav>
   <button class="theme" id="theme" aria-label="Switch between light and dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </div></div>
 
@@ -154,7 +180,7 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
   <div class="wrap">
     <div>
       <h1><span class="rise"><span>Niigata</span></span><span class="rise r2"><span>Furusato</span></span></h1>
-      <p class="fade">Japan's hometown, and you can be part of it.</p>
+      <p class="fade">Niigata welcomes you home.</p>
       <a class="btn fade" href="#ballot">See how the ballot works</a>
     </div>
     <div class="kanji fade" lang="ja" aria-hidden="true"><b>故郷</b>ふるさと</div>
@@ -163,10 +189,10 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
 
 <section class="state">
   <div class="wrap">
-    <h2>Furusato means hometown: the country place you belong to, wherever you live now. For one year, a rice terrace in Niigata is yours to look after. A farmer works it. You come to plant it or harvest it, and in February its sake reaches your door.</h2>
+    <h2>Furusato means hometown: the country place you belong to, wherever you live now. A hometown does not have to be where you were born. For one year you sponsor a rice terrace in Niigata and help keep it farmed. A farmer works it. You come to plant or harvest with them, and in February sake from the year's rice reaches you.</h2>
     <dl>
       <div><dt>Where</dt><dd>Matsudai, in Tokamachi, Niigata Prefecture</dd></div>
-      <div><dt>Your terrace</dt><dd>150 m² for two people, named on a map</dd></div>
+      <div><dt>The terrace</dt><dd>150 m², numbered, with no rights over the land and no residency</dd></div>
       <div><dt>Who works it</dt><dd>A local farmer, all year</dd></div>
       <div><dt>Japan's word for you</dt><dd>Kankei jinko <span lang="ja">関係人口</span>: someone who lives elsewhere and keeps coming back</dd></div>
     </dl>
@@ -175,13 +201,13 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
 
 <section class="year" id="year">
   <div class="wrap">
-    <header><h2>A steward's year follows the rice.</h2><p class="lead">Five moments, from the draw in the snow to the bottle on your table. You only need to be in Japan for one of them.</p></header>
+    <header><h2>A steward's year follows the rice.</h2><p class="lead">Five moments, from the ballot to the bottle on your table. You only need to be in Japan for one of them.</p></header>
     <ol class="steps">
-      <li><img src="img/y-jan.jpg" alt="A farmhouse under deep snow" loading="lazy"><h3><small>January</small>The ballot</h3><p>Places are drawn. Two to three metres of snow lie on the terraces, and it becomes the water for the rice.</p></li>
-      <li><img src="img/y-jun.jpg" alt="A visitor and a farmer planting rice seedlings by hand" loading="lazy"><h3><small>June</small>Planting</h3><p>If you are in Japan, you plant your terrace by hand beside the farmer who looks after it.</p></li>
-      <li><img src="img/y-sum.jpg" alt="Green rice terraces in summer" loading="lazy"><h3><small>Summer</small>Updates</h3><p>Your farmer sends word of how the terrace is growing. Fireflies come out over the paddies.</p></li>
-      <li><img src="img/y-oct.jpg" alt="A visitor and a farmer cutting ripe rice" loading="lazy"><h3><small>October</small>Harvest</h3><p>Or come in the autumn, cut the rice and hang it to dry on wooden racks.</p></li>
-      <li><img src="img/y-feb.jpg" alt="Sake being poured at home" loading="lazy"><h3><small>February</small>Your bottle</h3><p>Matsunoi brewery turns the terraces' rice into sake. Yours is labelled with your terrace.</p></li>
+      <li><img src="img/y-jan.jpg" alt="A farmhouse under deep snow" loading="lazy"><h3><small>January</small>The ballot</h3><p>Stewards are matched by ballot to a host farmer. In 2027, the first year, the ballot opens in April. The snow on the terraces becomes the water for the rice.</p></li>
+      <li><img src="img/y-jun.jpg" alt="A visitor and a farmer planting rice seedlings by hand" loading="lazy"><h3><small>June</small>Planting</h3><p>If you are in Japan, you plant the terrace by hand with the farmer who looks after it.</p></li>
+      <li><img src="img/y-sum.jpg" alt="Green rice terraces in summer" loading="lazy"><h3><small>July to September</small>Photographs</h3><p>The farmer sends a photograph of the terraces each month. Fireflies come out over the paddies.</p></li>
+      <li><img src="img/y-oct.jpg" alt="A visitor and a farmer cutting ripe rice" loading="lazy"><h3><small>October</small>Harvest</h3><p>Or come in the autumn, cut the rice by hand and hang it to dry on wooden racks.</p></li>
+      <li><img src="img/y-feb.jpg" alt="Sake being poured at home" loading="lazy"><h3><small>February</small>Your bottle</h3><p>All the stewards' rice is brewed in one batch. Each bottle carries the terrace number and the harvest year.</p></li>
     </ol>
   </div>
 </section>
@@ -193,7 +219,7 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
 
 <section class="route" id="route">
   <div class="wrap">
-    <svg class="map" id="map" viewBox="236 84 566 452" role="img" aria-label="Map of central Japan: Tokyo, Kyoto and Osaka on the Golden Route, with Niigata as a fourth stop reached by Shinkansen from Tokyo and by air from Osaka">
+    <svg class="map" id="map" viewBox="236 84 566 452" role="img" aria-label="Map of central Japan: Tokyo, Kyoto and Osaka on the Golden Route, with Niigata as a fourth stop reached by air from Osaka, with the Shinkansen on to Tokyo">
       <path class="land" d="M211.4 329.3 L204.8 328.1 L200.9 322.9 L202.2 317.1 L209.1 312.6 L215.8 321.6 L211.4 329.3ZM600.8 170.5 L591.6 169.8 L596.1 167.4 L599.1 156.4 L599.1 154.3 L593.2 154.0 L593.5 145.9 L597.9 138.0 L613.2 123.1 L609.3 146.2 L618.8 147.2 L612.7 162.7 L600.8 170.5ZM327.8 517.6 L320.5 517.0 L315.6 508.8 L328.5 491.7 L341.7 484.9 L334.0 498.9 L336.2 509.4 L327.8 517.6ZM289.6 492.6 L283.3 496.5 L277.9 487.3 L292.7 487.0 L289.6 492.6ZM-67.8 565.1 L-71.8 562.0 L-68.5 550.6 L-63.9 553.4 L-62.4 561.1 L-67.8 565.1ZM133.0 545.8 L142.0 544.4 L143.1 545.4 L136.5 551.7 L124.8 549.2 L124.2 544.0 L129.3 542.3 L133.0 545.8ZM55.0 578.0 L76.3 570.4 L85.1 575.1 L87.2 579.8 L86.2 584.8 L72.7 606.7 L100.6 608.5 L96.8 621.6 L104.7 628.4 L101.7 635.5 L109.3 640.7 L100.5 655.9 L-2.8 655.9 L-16.9 624.1 L-28.1 615.9 L-36.7 622.9 L-33.1 631.7 L-33.0 647.2 L-21.2 647.1 L-18.6 655.9 L-62.0 655.9 L-70.6 644.9 L-72.8 633.4 L-71.4 627.2 L-63.8 634.3 L-59.9 643.2 L-54.2 647.2 L-47.2 647.2 L-54.6 630.8 L-77.6 611.4 L-76.8 600.0 L-72.9 597.9 L-58.6 602.1 L-57.6 597.0 L-60.1 591.0 L-41.0 582.9 L-33.5 575.6 L-18.2 572.1 L-9.0 552.9 L5.4 545.2 L18.6 544.9 L27.4 549.3 L35.5 568.4 L44.6 575.2 L55.0 578.0ZM302.3 516.5 L313.3 515.3 L313.1 532.8 L317.7 544.0 L316.1 551.6 L321.1 554.3 L293.0 574.6 L282.6 590.8 L277.9 609.2 L260.6 590.0 L252.5 585.7 L235.2 583.9 L208.4 598.4 L197.5 625.0 L187.4 634.5 L184.4 648.1 L176.7 655.9 L158.4 655.7 L163.6 642.3 L147.0 641.0 L146.8 632.2 L141.8 627.3 L145.5 620.8 L148.3 604.8 L140.1 601.2 L140.6 591.7 L111.2 600.3 L158.5 566.8 L169.5 537.8 L181.2 527.9 L185.4 528.6 L196.6 544.0 L213.3 539.3 L222.8 539.7 L231.4 535.4 L236.1 524.1 L233.0 513.7 L241.0 514.3 L259.8 503.7 L269.7 502.7 L302.3 516.5ZM843.7 -95.9 L857.0 -83.8 L868.7 -66.3 L882.8 -23.4 L882.7 16.4 L876.8 46.9 L867.1 55.9 L858.0 60.0 L849.3 80.3 L846.4 105.7 L843.2 114.7 L815.3 121.0 L804.0 139.2 L801.4 148.4 L809.7 204.5 L807.0 238.3 L804.4 249.1 L790.7 264.0 L785.9 275.1 L778.0 297.0 L773.8 323.1 L777.6 339.6 L797.1 371.6 L775.6 380.5 L764.8 392.2 L759.8 419.9 L753.7 426.3 L733.9 437.5 L723.1 450.8 L713.7 445.3 L717.1 440.2 L717.8 418.9 L715.8 412.7 L736.0 389.3 L736.8 385.0 L728.3 377.1 L716.5 378.0 L712.7 382.4 L711.3 393.7 L702.2 401.9 L703.4 410.5 L709.5 416.9 L704.1 426.8 L701.1 427.5 L695.5 417.8 L688.5 412.5 L671.1 414.5 L664.3 420.9 L660.7 431.8 L661.2 445.3 L658.4 456.6 L643.7 476.8 L639.1 477.7 L633.2 470.0 L636.4 443.6 L644.2 438.7 L637.8 432.0 L630.0 429.2 L618.9 432.9 L593.8 466.8 L588.8 479.9 L572.5 475.6 L538.7 473.4 L501.3 481.2 L502.5 477.5 L518.9 469.6 L517.9 463.0 L499.1 463.6 L493.7 457.0 L491.5 458.9 L492.2 467.9 L486.6 466.7 L485.1 443.2 L488.6 437.7 L481.4 436.3 L472.5 442.7 L460.3 472.0 L466.7 480.6 L487.3 495.5 L485.2 506.0 L444.6 520.1 L412.5 579.1 L395.3 586.3 L376.5 579.9 L368.3 563.7 L355.0 546.8 L351.3 536.4 L351.9 519.5 L349.1 509.4 L365.4 497.1 L373.3 484.6 L373.6 477.8 L368.9 474.3 L344.6 476.5 L321.2 463.7 L309.1 463.1 L282.9 468.6 L261.3 486.5 L220.8 495.5 L197.3 508.0 L187.7 505.4 L159.6 513.4 L141.3 503.2 L132.9 505.9 L127.1 515.3 L120.0 552.5 L88.5 532.1 L68.0 535.2 L49.1 542.0 L36.6 535.1 L24.7 539.4 L22.4 511.9 L31.4 499.4 L58.5 497.4 L78.2 478.0 L97.5 467.4 L128.8 439.0 L156.6 411.7 L162.7 401.0 L180.2 392.1 L206.9 387.8 L215.4 397.1 L234.0 392.1 L262.3 392.5 L280.4 389.4 L299.2 380.9 L332.2 377.5 L354.9 369.5 L362.0 371.9 L359.4 384.4 L366.7 390.7 L394.2 392.9 L411.4 382.9 L426.4 367.5 L420.7 357.3 L419.5 346.2 L424.2 334.0 L431.1 323.8 L446.8 310.6 L473.1 274.1 L477.1 254.0 L474.8 230.3 L484.4 212.7 L521.6 199.3 L522.7 207.4 L508.3 222.2 L490.7 232.9 L488.8 238.1 L496.1 246.8 L497.8 265.0 L506.2 271.0 L519.6 273.0 L536.4 254.0 L599.0 228.4 L623.2 204.1 L642.8 168.4 L670.9 152.6 L682.8 139.8 L692.1 105.2 L713.9 68.9 L722.5 35.6 L730.2 23.2 L733.0 13.1 L733.6 -14.3 L728.9 -24.5 L725.1 -27.3 L714.6 -26.6 L709.3 -30.8 L710.3 -34.4 L719.5 -37.0 L722.2 -40.4 L730.2 -63.3 L723.4 -95.9 L843.7 -95.9Z"/>
       <path class="golden" d="M711.5 375.9 L401.1 440.2 L380.2 470.9"/>
       <path class="air" d="M660.3 158.2 L380.2 470.9"/>
@@ -205,13 +231,53 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
     </svg>
     <div>
       <h2>After Tokyo, Kyoto and Osaka, a fourth stop.</h2>
-      <p class="lead" style="margin-top:20px">A first trip to Japan from Europe or America lasts about two weeks. Two of those nights fit in Niigata without doubling back.</p>
+      <p class="lead" style="margin-top:20px">A first trip to Japan from Europe or America lasts about two weeks. Fly in from Osaka, spend two nights, and take the train on to Tokyo for the flight home.</p>
       <ul class="facts">
-        <li><b>75 min</b><span>from Tokyo to Echigo-Yuzawa by Shinkansen, where your host meets you</span></li>
-        <li><b>65 min</b><span>from Niigata to Osaka Itami with ANA, so the trip carries on to Kyoto</span></li>
+        <li><b>60 to 80 min</b><span>from Osaka Itami to Niigata with ANA, six flights a day each way</span></li>
+        <li><b>66 to 79 min</b><span>from Echigo-Yuzawa to Tokyo by Shinkansen, for the flight home</span></li>
         <li><b>12.8 nights</b><span>is the average stay of a UK leisure visitor to Japan in 2025, against 7.1 for all visitors</span></li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="planner" id="plan">
+  <div class="wrap">
+    <div>
+      <h2>Plan a Niigata visit.</h2>
+      <p class="lead" style="margin-top:20px">Choose your season and two to four nights. Planting is in early summer and harvest in autumn.</p>
+      <form class="picks" id="picks">
+        <fieldset><legend>When are you in Japan?</legend>
+          <label><input type="radio" name="season" value="spring"><span>Spring</span></label>
+          <label><input type="radio" name="season" value="summer" checked><span>Summer</span></label>
+          <label><input type="radio" name="season" value="autumn"><span>Autumn</span></label>
+          <label><input type="radio" name="season" value="winter"><span>Winter</span></label>
+        </fieldset>
+        <fieldset><legend>How many nights?</legend>
+          <label><input type="radio" name="nights" value="2" checked><span>2</span></label>
+          <label><input type="radio" name="nights" value="3"><span>3</span></label>
+          <label><input type="radio" name="nights" value="4"><span>4</span></label>
+        </fieldset>
+      </form>
+      <div aria-live="polite">
+        <h3 id="p-head">June: planting</h3>
+        <p id="p-sub">Plant the terrace by hand with the farmer. Two nights in Tokamachi.</p>
+        <ul class="legs" id="p-legs">
+          <li>Flight from Osaka Itami to Niigata <em>Book flight</em></li>
+          <li>Host meets you at the station <em class="inc">Included</em></li>
+          <li>Onsen inn in Tokamachi, two nights <em>Book inn</em></li>
+          <li>Train on to Tokyo <em>Book train</em></li>
+        </ul>
+      </div>
+      <p class="pnote">Booking opens once partners agree. Nothing here is on sale yet.</p>
+    </div>
+    <aside class="sponsor">
+      <h3>Sponsor a terrace</h3>
+      <img src="img/planting.jpg" alt="Rice terraces filled with water at planting time" loading="lazy">
+      <ul><li>50 places for 2027</li><li>Ballot opens in April</li><li>Refundable £20 deposit</li></ul>
+      <a class="btn" href="#ballot">Enter the ballot</a>
+      <small>No rights over land. No residency.</small>
+    </aside>
   </div>
 </section>
 
@@ -221,8 +287,8 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
     <div>
       <h2>Two days around Tokamachi.</h2>
       <ol class="plan">
-        <li><h3>Day one</h3><p><strong>The terrace.</strong> Your host drives you from the station to Matsudai. Lunch in the field, then planting or harvest with the farmer. The night is at Matsunoyama Onsen, a hot spring fed by seawater trapped about 12 million years ago.</p></li>
-        <li><h3>Day two</h3><p><strong>The people.</strong> Lunch cooked by the farmers, then Matsunoi, the brewery that makes your sake, and the Matsudai art field, where sculptures of rice farmers stand on the terraces. A second night at the onsen.</p></li>
+        <li><h3>Day one</h3><p><strong>The terrace.</strong> A host meets the group at Echigo-Yuzawa station and drives to Matsudai. Lunch in the field, then planting or harvest with the farmer. The night is at Matsunoyama Onsen, a hot spring fed by seawater trapped about 12 million years ago.</p></li>
+        <li><h3>Day two</h3><p><strong>The people.</strong> Lunch cooked by the farmers, then Matsunoi, a Tokamachi brewery that already brews with terrace rice, and the Matsudai art field, where sculptures of rice farmers stand on the terraces. A second night at the onsen.</p></li>
         <li><h3>Going on</h3><p><strong>The rest of Niigata.</strong> Kiyotsu Gorge and the Hakkaisan snow store are close by. The metalworkers of Tsubame-Sanjo are on the way to Niigata airport. Sado is for the next visit.</p></li>
       </ol>
     </div>
@@ -234,23 +300,23 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
     <h2>What a stewardship costs.</h2>
     <p class="lead" style="margin-top:20px">Two prices: one for the year, one for each visit. Flights and rail are separate.</p>
     <div class="figs">
-      <div><b>¥80,000</b><h3>A share, for the year</h3><p>A 150 m² terrace for two people, worked by a farmer, with updates through the season and two labelled bottles in February. A half share for one person is 45,000 yen.</p></div>
+      <div><b>¥80,000</b><h3>A stewardship, for the year</h3><p>One 150 m² terrace sponsored by two people and worked by a farmer, with a photograph each month from July to September and a labelled bottle each in February. A stewardship for one person is 45,000 yen.</p></div>
       <div><b>¥70,000</b><h3>A visit, per person</h3><p>Two nights at an onsen inn with dinner and breakfast, an English-speaking host, the field day and transfers from Echigo-Yuzawa.</p></div>
     </div>
-    <p class="local">About <strong>three quarters</strong> of what two stewards pay for a share and a visit goes to people in Niigata: the farmers, the inn, the brewery and the host.</p>
+    <p class="local">About <strong>three quarters</strong> of what two stewards pay for a stewardship and a visit goes to people in Niigata: the farmers, the inn, the brewery and the host.</p>
   </div>
 </section>
 
 <section class="ballot" id="ballot">
   <img src="img/dusk.jpg" alt="" loading="lazy">
   <div class="wrap">
-    <h2>50 terraces in 2027, drawn by ballot.</h2>
+    <h2>50 places in 2027, drawn by ballot.</h2>
     <p class="lead" style="color:#E4E8DF;margin-top:20px">There are only so many terraces, and only so many guests a farming village can host well. So places are drawn once a year.</p>
     <ol>
-      <li>Enter in January with a 20 pound deposit. It is refunded if you are not drawn.</li>
-      <li>If you are drawn, pay for your share. The terrace fee reaches the farmers before planting.</li>
-      <li>Choose a planting visit in June or a harvest visit in the autumn.</li>
-      <li>Renew next January and the same terrace stays yours.</li>
+      <li>Enter with a refundable 20 pound deposit. In 2027 the ballot opens in April. From 2028 it is in January.</li>
+      <li>If you are drawn, pay the fee and show a booked flight to Japan. The fee goes to the host farmers.</li>
+      <li>In 2027 the first visit is the October harvest. From 2028, choose planting in June or harvest in October.</li>
+      <li>Renew the next year and keep the same terrace number. A stewardship gives no rights over land and no residency.</li>
     </ol>
     <a class="btn" href="plant/">Plant a row in the terrace now</a>
   </div>
@@ -259,13 +325,30 @@ footer b{font-family:var(--display);font-size:20px;color:var(--ink)}
 
 <footer><div class="wrap">
   <div><b>Niigata Furusato <span lang="ja">故郷</span></b><p>A concept by a London Business School MBA team for the Visit Japan Marketing Strategy Competition 2026. Nothing here is on sale. Prices, dates and partners are proposals, and no partner has agreed to them.</p><p>The photographs are AI-generated concept images, not pictures of Matsudai.</p></div>
-  <div><p>Figures: Japan Tourism Agency, Inbound Consumption Survey 2025; Niigata Prefecture Tourism Action Plan; JR East; FlightConnections, November 2026; Matsudai Tanada Bank. The three quarters figure is the team's own cost model.</p><p><a href="classic/">The earlier version of this site, with the map and trip planner</a></p></div>
+  <div><p>Figures: Japan Tourism Agency, Inbound Consumption Survey 2025; Niigata Prefecture Tourism Action Plan; JR East; ANA timetable, 25 October 2026 to 31 January 2027; Ekitan timetable, June 2026; Matsudai Tanada Bank. The three quarters figure is the team's own cost model.</p><p><a href="classic/">The earlier version of this site, with the map and trip planner</a></p></div>
 </div></footer>
 
 <script>
 const nav=document.getElementById('nav');const sc=()=>nav.classList.toggle('solid',scrollY>8);addEventListener('scroll',sc,{passive:true});sc();
 document.getElementById('theme').onclick=()=>{const r=document.documentElement;const dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;const n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('nf-theme',n)}catch(e){}};
 const map=document.getElementById('map');if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){map.classList.add('on');o.disconnect()}},{threshold:.01,rootMargin:'0px 0px -15% 0px'}).observe(map)}else map.classList.add('on');
+</script>
+<script>
+(function(){var f=document.getElementById('picks');if(!f)return;
+var S={spring:['May: water in the terraces','The snow has melted and the farmers flood the terraces. Walk them with your host before planting begins.'],
+summer:['June: planting','Plant the terrace by hand with the farmer.'],
+autumn:['October: harvest','Cut the rice by hand and hang it to dry on wooden racks.'],
+winter:['February: the new sake','Deep snow on the terraces, the onsen, and the brewery in its brewing season.']};
+var W={2:'Two',3:'Three',4:'Four'},w={2:'two',3:'three',4:'four'};
+function leg(t,tag,inc){return '<li>'+t+' <em'+(inc?' class="inc"':'')+'>'+tag+'</em></li>'}
+function draw(){var s=f.season.value,n=+f.nights.value;
+document.getElementById('p-head').textContent=S[s][0];
+document.getElementById('p-sub').textContent=S[s][1]+' '+W[n]+' nights in Tokamachi'+(n>2?' and nearby.':'.');
+var h=leg('Flight from Osaka Itami to Niigata','Book flight')+leg('Host meets you at the station','Included',1)+leg('Onsen inn in Tokamachi, '+w[n]+' nights','Book inn');
+if(n>2)h+=leg('Kiyotsu Gorge and the Hakkaisan snow store','Add day');
+if(n>3)h+=leg('Craft day with the metalworkers of Tsubame-Sanjo','Add day');
+h+=leg('Train on to Tokyo','Book train');document.getElementById('p-legs').innerHTML=h}
+f.addEventListener('change',draw);draw()})();
 </script>
 </body>
 </html>
